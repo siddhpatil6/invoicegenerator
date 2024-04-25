@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <Button
+            android:id="@+id/btnSaveCompanyInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:text="Save Company Info" />
+
+        <TextView
+            style="@style/tvHeadingStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/edt_margin_top"
+            android:text="Invoice Color" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/viewColorPicker"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:onClick="showColorPicker"
+            android:layout_marginTop="@dimen/edt_margin_top"
+            app:cardBackgroundColor="@color/purple_500"
+            app:cardCornerRadius="8dp" />
+
+        <TextView
+            style="@style/tvHeadingStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/edt_margin_top"
+            android:text="Billing Info Data" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/edt_margin_top">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Customer Name"
+                android:id="@+id/edt_customer_name"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/edt_margin_top">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/edt_customer_address1"
+                android:hint="Customer Address Line 1" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/edt_margin_top">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:id="@+id/edt_gst_number"
+                android:hint="GST Number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/edt_margin_top">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/edt_invoice_number"
+                android:hint="Invoice Number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/edt_margin_top">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/edt_invoice_date"
+                android:hint="Date of issue" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            style="@style/tvHeadingStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/edt_margin_top"
+            android:text="Invoice Table Item" />
+
+        <androidx.appcompat.widget.AppCompatSpinner
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@color/green_50"
+                android:text="Monthly"
+                android:id="@+id/spinner_plan"
+            android:layout_marginTop="16dp"
+
+            android:hint="Plan Type" />
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="Monthly"
+            android:background="@color/green_50"
+            android:id="@+id/spinner_bill_period"
+            android:layout_marginTop="16dp"
+            android:hint="Bill Period" />
+        <TextView
+            style="@style/tvHeadingStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/edt_margin_top"
+            android:text="Invoice Price Info" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/edt_margin_top">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/edt_grand_total"
+                android:hint="Grand Total" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/edt_margin_top"
+            android:onClick="generatePDF"
+            android:text="Generate PDF"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:layout_editor_absoluteY="277dp" />
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
